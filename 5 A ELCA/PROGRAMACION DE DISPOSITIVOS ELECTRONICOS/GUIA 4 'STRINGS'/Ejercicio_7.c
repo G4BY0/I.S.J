@@ -1,3 +1,5 @@
+//AVERIGUAR LUEGO PROBLEMA POR Q NO FUNCIONA EL STRING COPY.
+
 //----------------------------------//
 // GUIA DE EJERCICIOS: STRINGS      //
 // ALUMNO: GABRIEL B. GUERETA TADEI //
@@ -26,32 +28,43 @@ int main(void){
 	
 	char temp_pointer[100];
 	int temp_int;
-
+	int position_EOF; // <- VARIABLE NECESARIA SI NO SE APLICA STRCPY();
 	
 	//SOLICITO A STDIN LOS DATOS DE LAS 5 PERSONAS SOLICITADAS
 	puts("INGRESAR:");
-	for(short numero_total_de_personas =1; numero_total_de_personas <= 5; numero_total_de_personas++){
-	
-		printf("NOMBRE DE LA %d° PERSONA: " ,numero_total_de_personas);
-		scanf("%s" ,temp_pointer);
+	for (short numero_total_de_personas = 1; numero_total_de_personas <= 5; numero_total_de_personas++) {
 
-		printf("\nEDAD DE LA %d° PERSONA: " ,numero_total_de_personas);
-		scanf("%d" ,&temp_int);
+		printf("NOMBRE DE LA %d° PERSONA: ", numero_total_de_personas);
+		scanf("%s", temp_pointer);
+
+		printf("\nEDAD DE LA %d° PERSONA: ", numero_total_de_personas);
+		scanf("%d", &temp_int);
 
 		puts("\n");
 
 
-		if(temp_int > edad_mas_chico){
-		
-		//lo que hay en temp se copia en edad_mas_chico
-		strcpy(nombre, temp_pointer);
-		
-		edad_mas_chico = temp_int;
+		if (temp_int > edad_mas_chico) {
 
+			//lo que hay en temp se copia en edad_mas_chico
+
+
+			/* PROBLEMA CON strcpy, averiguar luego por que, mientras tanto aplico a la antigua.
+			strcpy(nombre, temp_pointer);
+
+			edad_mas_chico = temp_int;
+
+			}
+			*/
+			//LOGICA PARA ENCONTRAR EL EL EOF {FIN DE LA TRANSMISION} O '\0'                 <----------- CODIGO RECICLADO DEL EJERCICIO 3
+			for (position_EOF = 0; temp_pointer[position_EOF] != '\0'; position_EOF++);
+			//--------------------------------------------------------------
+			edad_mas_chico = temp_int;
+			for (short voy_alojando_datos = position_EOF; position_EOF != 0; position_EOF--, nombre[voy_alojando_datos] = temp_pointer[voy_alojando_datos]); // COPIANDO
+
+		//--------------------------------
 		}
-
 	}
-    
+
     //OFRECIENDO LOS DATOS A STDOUT PEDIDOS POR EL ENUNCIADO 
     printf("LA PERSONA MAS JOVEN SE LLAMA: %s" ,nombre);
     

@@ -2,12 +2,12 @@
 // GUIA DE EJERCICIOS: STRINGS      //
 // ALUMNO: GABRIEL B. GUERETA TADEI //
 // CURSO: 5 "A" E.L.C.A.            //
-// EJERCICIO N° --> 2               //
+// EJERCICIO Nï¿½ --> 2               //
 //----------------------------------//
 
 /*
   ENUNUCIADO:
-  > Permitir el ingreso de una palabra y mostrarla en pantalla al revés.
+  > Permitir el ingreso de una palabra y mostrarla en pantalla al revï¿½s.
    Por ejemplo, para "CASA" se debe mostrar "ASAC".
 */
 //Lib STDIN STDOUT
@@ -22,7 +22,7 @@ int main(void) {
 
 
     //PIDO A STDIN LOS DATOS SOLICITADOS.
-    printf("Escribir la palabra en cuestión: ");
+    printf("Escribir la palabra en cuestiï¿½n: ");
     scanf("%s", str);
     //-----------------------------------
 
@@ -47,4 +47,3 @@ int main(void) {
     return 0;
 
 }
-

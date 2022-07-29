@@ -18,12 +18,12 @@ int function();
 
 
 int main(void){
-    
-    
-    
-    
+
+
+
+
     printf("La palabra ingresada es de %ld letras" ,function());
-    
+
 
     return 0;
 
@@ -31,23 +31,23 @@ int main(void){
 
 
 int function(){
-    
+
     char aux;
-    
+
     for(unsigned long numero_de_letras = 0; numero_de_letras < 20; numero_de_letras++){
-       
+
         aux = getchar();
-        
+
         // TODAS LAS POSIBILIDADES QUE SE ME PUDIERON OCURRIR MIRANDO LA TABLA ASCII 'LOS CARACTERES DE CONTROL'
         if(aux == '\n' || aux == ' ' || aux == '\t' || aux == '\v' || aux == '\f' || aux == '\r'){
-            
-           return numero_de_letras; 
-        
+
+           return numero_de_letras;
+
         }
-        
-        
+
+
     }
-    
+
     return 20;
 
 }
