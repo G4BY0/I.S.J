@@ -1,0 +1,36 @@
+# STRINGS
+
+
+Sin utilizar funciones para manejo de strings de la biblioteca estándar, resuelva:
+
+
+1_ Permitir que el usuario ingrese una palabra de hasta 20 letras. Mostrar en pantalla cuántas letras tiene la palabra ingresada.
+Por ejemplo "CASA" debe indicar 4 letras.
+
+2_ Permitir el ingreso de una palabra y mostrarla en pantalla al revés.
+Por ejemplo, para "CASA" se debe mostrar "ASAC".
+
+3_ El usuario ingresa dos strings. Mostrar en pantalla si son iguales o no, es decir, si tienen las mismas letras en las mismas posiciones.
+
+4_ El usuario ingresa una palabra. Mostrar en pantalla cuántas letras A minúsculas contiene.
+
+5_ El usuario ingresa una palabra. Mostrar en pantalla cuántas vocales minúsculas y mayúsculas contiene.
+
+6_ El usuario ingresa una palabra. Determinar qué letra aparece mayor cantidad de veces. Para simplificar el problema, trabaje solo con mayúsculas.
+
+
+A partir de acá se pueden utilizar funciones de la biblioteca estándar (strlen, strcpy, strcmp):
+
+
+7_ El usuario ingresará 5 nombres de personas y sus edades (número entero). 
+Luego de finalizar el ingreso, muestre en pantalla el nombre de la persona más joven.
+El ingreso se realiza de este modo: nombre y edad de la primera persona, luego nombre y edad de la segunda, etc...
+Nota: no hay que almacenar todos los nombres y todas las notas.
+
+8_ El usuario ingresará nombres de personas hasta que ingrese la palabra "FIN". No sabemos cuántos nombres ingresará.
+Luego de finalizar el ingreso, mostrar en pantalla cuál es el primer nombre en orden alfabético de todos los ingresados.
+
+9_ El usuario ingresará una palabra de hasta 10 letras. Se desea mostrarla en pantalla pero encriptada según el "Código César".
+Esto consiste en reemplazar cada letra con la tercera consecutiva en el abecedario. Por ejemplo, "CASA" se convierte en "FDVD".
+Tener en cuenta que las últimas letras deben volver al inicio, por ejemplo la Y se convierte B.
+Este mecanismo se utilizaba en el Imperio Romano.
