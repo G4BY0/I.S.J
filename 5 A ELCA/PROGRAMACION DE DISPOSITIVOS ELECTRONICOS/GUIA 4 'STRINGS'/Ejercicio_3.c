@@ -16,18 +16,18 @@ int main(void){
 	//OTRA MANERA DE HACERLO SERIA CON PUNTEROS PERO SE VUELVE MUY TEDIOSO, ENTONCES VOY A USAR VECTORES DE CARACTERES
 	char string_1[250];
 	char string_2[250];
-	short flag_comparacion;
+	short flag_comparacion; // <- 0 "PALABRAS DIFERENTES" || 1 "PALABRAS IGUALES"
 
 	//PIDO A STDIN LOS DATOS A COMPARAR
-	printf("Escribir 1� palabra: ");
+	printf("Escribir 1° palabra: " );
 	scanf("%s" ,string_1);
 
-	printf("Escribir 2� palabra: ");
+	printf("Escribir 2° palabra: ");
 	scanf("%s" ,string_2);
 
 
 	//LOGICA DE COMPARACION
-	for(short i = 0; i < 250; i++){
+	for(short i = 0; i <= 250; i++){
 
 		//LOGICA DE SI TERMINO EL STREAM DE LA CADENA
 		if(string_1[i] == '\0' && string_2[i] == '\0'){
@@ -40,14 +40,14 @@ int main(void){
 
 
 			flag_comparacion = 0;
-            break;
+			break;
 		}
 
 		if(string_1[i] != '\0' && string_2[i] == '\0'){
 
 
 			flag_comparacion = 0;
-            break;
+			break;
 		}
 		//--------------------------------------------
 
