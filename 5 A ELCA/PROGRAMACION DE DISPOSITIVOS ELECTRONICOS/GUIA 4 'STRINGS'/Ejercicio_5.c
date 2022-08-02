@@ -22,9 +22,9 @@ int main(void){
     contador_minusculas = 0;
     contador_mayusculas = 0;
 
-
+		puts("Ingresar palabra:");
     //logica para ignorar espacios, enter, tabulaciones, entre otros tipos de control
-	while((temp = getchar()) != '\n' && temp != ' ' && temp != '\t' && temp != '\v' && temp != '\f' && temp != '\r'){
+		while((temp = getchar()) != '\n' && temp != ' ' && temp != '\t' && temp != '\v' && temp != '\f' && temp != '\r'){
 
 	    //si el caracter es alguna vocal minuscula, incrementar contador_minusculas
 	    if(temp == 'a' || temp == 'e' || temp == 'i' || temp == 'o'|| temp == 'u'){

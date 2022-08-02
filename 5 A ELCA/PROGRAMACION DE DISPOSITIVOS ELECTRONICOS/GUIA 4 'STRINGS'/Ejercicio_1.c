@@ -16,7 +16,6 @@
 //declaro funcion
 int function();
 
-
 int main(void){
 
 

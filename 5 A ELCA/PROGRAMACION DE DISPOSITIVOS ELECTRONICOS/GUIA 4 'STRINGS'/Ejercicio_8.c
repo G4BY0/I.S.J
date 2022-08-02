@@ -15,19 +15,42 @@
 //Lib Aplicada
 #include <string.h>
 
+#define PALABRA_CLAVE "FIN"
+int function();
 
 int main(void){
 
-	#define PALABRA_CLAVE "FIN"
-	char temporal_nombre[100];
-	
 
-	while(temp != PALABRA_CLAVE){
-	
-		
+	char temporal_nombre[100];
+
+
+	for(int i = 0; temporal_nombre != PALABRA_CLAVE; i++){
+
+		scanf("%s" ,temporal_nombre);
+
+		if(strcmp(temporal_nombre, "FIN") == 0){ //strcmp() <--- si retorna 0, es porque son iguales
+
+			break;
+
+		}
+		else{
+
+			function(i);
+
+		}
+	}
+
+	return 0;
+}
+
+
+int function(int reservado){
+
+	for(){
+
+		int names[i];
 
 	}
-	
 
 	return 0;
 }

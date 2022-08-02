@@ -2,14 +2,14 @@
 // GUIA DE EJERCICIOS: STRINGS      //
 // ALUMNO: GABRIEL B. GUERETA TADEI //
 // CURSO: 5 "A" E.L.C.A.            //
-// EJERCICIO N° --> 9               //
+// EJERCICIO Nï¿½ --> 9               //
 //----------------------------------//
 
 /*
   ENUNUCIADO:
-  > El usuario ingresará una palabra de hasta 10 letras. Se desea mostrarla en pantalla pero encriptada según el "Código César".
+  > El usuario ingresarï¿½ una palabra de hasta 10 letras. Se desea mostrarla en pantalla pero encriptada segï¿½n el "Cï¿½digo Cï¿½sar".
    Esto consiste en reemplazar cada letra con la tercera consecutiva en el abecedario. Por ejemplo, "CASA" se convierte en "FDVD".
-   Tener en cuenta que las últimas letras deben volver al inicio, por ejemplo la Y se convierte B.
+   Tener en cuenta que las ï¿½ltimas letras deben volver al inicio, por ejemplo la Y se convierte B.
    Este mecanismo se utilizaba en el Imperio Romano.
 */
 //Lib STDIN STDOUT
@@ -17,9 +17,42 @@
 //Lib Aplicada
 #include <string.h>
 
-int main(void){
+char *function();
 
-	char palabra[10];
-	
+int main(void){2
+
+  ''
+
+  printf("La palabra ingresada encriptada segun el \"Codigo Cesar\"" ,function());
+
 	return 0;
+}
+
+
+char *function(){
+
+  char palabra[10];
+
+  for(unsigned long numero_de_letras = 0; numero_de_letras < 10; numero_de_letras++){
+
+
+
+    // LOGICA DE CONTROL
+    if((palabra[numero_de_letras] = getchar()) == '\n' || palabra[numero_de_letras] == ' ' || palabra[numero_de_letras] == '\t' || palabra[numero_de_letras] == '\v' || palabra[numero_de_letras] == '\f' || palabra[numero_de_letras] == '\r'){
+
+      return palabra;
+
+    }
+
+    else{
+
+      palabra[numero_de_letras] = 'palabra[numero_de_letras] + 3';
+
+    }
+
+
+  }
+
+  return palabra;
+
 }
