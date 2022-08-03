@@ -18,6 +18,11 @@ int main(void){
 	char string_2[250];
 	short flag_comparacion; // <- 0 "PALABRAS DIFERENTES" || 1 "PALABRAS IGUALES"
 
+	int string_1_EOF;
+	int string_2_EOF;
+
+
+
 	//PIDO A STDIN LOS DATOS A COMPARAR
 	printf("Escribir 1° palabra: " );
 	scanf("%s" ,string_1);
@@ -26,6 +31,35 @@ int main(void){
 	scanf("%s" ,string_2);
 
 
+	for(string_1_EOF = 0; string_1[string_1_EOF] != '\0'; string_1_EOF++);
+	for(string_2_EOF = 0; string_2[string_2_EOF] != '\0'; string_2_EOF++);
+	printf("%d" ,string_1_EOF);
+	printf("%d" ,string_2_EOF);
+	if(string_1_EOF == string_2_EOF){
+
+		for(short checkeando = 0, flag_comparacion = 1; (flag_comparacion != 0) && (checkeando < string_1_EOF); checkeando++){
+
+			if(string_1[checkeando] != string_2[checkeando]){
+
+				flag_comparacion = 0;
+
+			}
+
+		}
+
+	}
+
+
+
+
+
+	//for(int caracter = 0; string_1[caracter] != '\0' && string_2[caracter] != '\0'; caracter++){
+
+
+
+
+
+	/*
 	//LOGICA DE COMPARACION
 	for(short i = 0; i <= 250; i++){
 
@@ -60,7 +94,7 @@ int main(void){
 
 	}
 	//--------------------
-
+	*/
 
 	if(flag_comparacion == 1){
 
