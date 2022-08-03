@@ -13,7 +13,7 @@
 #include <stdio.h>
 
 //DECLARO ABCEDARIO EN MAYUSCULA_ESPA�OL
-const char alfabeto_mayuscula[29] = "ABCDEFGHIJKLMN�OPQRSTUVWXYZ"; // <- ERROR DE COMPILADOR SI LO HAGO DE 28/27 POSICIONES.
+const char alfabeto_mayuscula[29] = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"; // <- ERROR DE COMPILADOR SI LO HAGO DE 28/27 POSICIONES.
 
 int main(void){
     char temp;

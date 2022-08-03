@@ -37,12 +37,12 @@ int main(void){
 	printf("%d" ,string_2_EOF);
 	if(string_1_EOF == string_2_EOF){
 
-		for(short checkeando = 0, flag_comparacion = 1; (flag_comparacion != 0) && (checkeando < string_1_EOF); checkeando++){
+		for(short checkeando = 0, flag_comparacion = 1; checkeando < string_1_EOF; checkeando++){
 
 			if(string_1[checkeando] != string_2[checkeando]){
 
 				flag_comparacion = 0;
-
+				break;
 			}
 
 		}
