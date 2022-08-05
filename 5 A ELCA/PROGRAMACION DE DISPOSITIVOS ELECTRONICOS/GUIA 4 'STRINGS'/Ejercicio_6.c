@@ -97,13 +97,13 @@ int main(void){
     //------------------
 
   }
-
+  /*
   for(int i = 0 ; i < 27; i++){
 
     printf("%d\n" ,alfabeto_contador_de_repeticiones[i]);
 
   }
-
+  */
   //STDOUT
   //IMPLEMENTACION DE OPERADOR TERNEARIO
   //(flag_repeticion == 1) ? printf("De la palabra ingresada, la letra \"%c\" mayuscula fue la mas repetida." ,letra_mas_repetida) : printf("Hay más de un caractér ")
