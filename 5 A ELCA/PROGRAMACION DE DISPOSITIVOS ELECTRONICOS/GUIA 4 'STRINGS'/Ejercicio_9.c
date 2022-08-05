@@ -21,8 +21,10 @@ char *function(); //FUNCION QUE RETORNA STRING
 char palabra[10]; //STRING
 
 int main(void){
+  //Contexto
+  puts("Algoritmo que encripta segun el \"Codigo Cesar\" {De 3 Posiciones}: ");
   //INDICACION
-  printf("Ingresar palabra a encriptar en \"Codigo Cesar\" {De 3 Posiciones}: ");
+  printf("Ingresar palabra a encriptar: ");
 
   printf("La palabra ingresada encriptada es: %s" ,function()); // <---- RETORNA STRING Y LO MUESTRA EN STDOUT
 
