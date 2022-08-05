@@ -23,11 +23,11 @@ Nota: no hay que almacenar todos los nombres y todas las notas.
 int main(void){
 
 
-	char nombre[100];
-	int edad_mas_chico;
+	char nombre[100];				//SE MOSTRARÁ EN STDOUT EL STRING ALMACENADO
+	int edad_mas_chico;			//SE USARA COMO GUIA PARA COMPARAR ENTRE LAS PERSONAS Y ENCONTRAR EL MAS JOVEN
 
-	char temp_pointer[100];	//Variable dinamica
-	int temp_int;						//Variable dinamica
+	char temp_pointer[100];	//VARIABLE DINAMICA
+	int temp_int;						//VARIABLE DINAMICA
 	// int position_EOF; // <- VARIABLE NECESARIA SI NO SE APLICA STRCPY();
 
 	//SOLICITO A STDIN LOS DATOS DE LAS 5 PERSONAS SOLICITADAS
@@ -42,7 +42,16 @@ int main(void){
 
 		puts("\n");
 
+		//INICIALIZACION DE edad_mas_chico
+		if(numero_total_de_personas == 1){
+			strcpy(nombre, temp_pointer);
+			edad_mas_chico = temp_int;
+			continue;
+		}
+		//--------------------------------
+
 		//LOGICA PARA ENCONTRAR LA PERSONA MAS JOVEN
+
 		if (temp_int < edad_mas_chico) {
 			//copio el string de temp_pointer a nombre
 			strcpy(nombre, temp_pointer);
@@ -59,19 +68,13 @@ int main(void){
 
 
 		}
-		//------------------------------------
-		//INICIALIZACION DE edad_mas_chico
-		if(numero_total_de_personas == 1){
+		//----------------------------------------
 
-			edad_mas_chico = temp_int;
 
-		}
-		//--------------------------------
 	}
 
   //OFRECIENDO LOS DATOS A STDOUT PEDIDOS POR EL ENUNCIADO
   printf("LA PERSONA MAS JOVEN SE LLAMA: %s" ,nombre);
-
 
 	return 0;
 }
