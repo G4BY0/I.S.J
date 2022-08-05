@@ -21,50 +21,27 @@
 int main(void){
 
 
-	char temporal_nombre[100];
-	char nombre_stdout[100];
+	char temporal_nombre[100]; //variable que varia en cada iteracion dentro del while
+	char nombre_stdout[100];	//Luego se mostrara en STDOUT y se usara para comparar con el otro vector de caracteres.
+
+	//Contexto
+	puts("Algoritmo que guarda los strings de \"menor\" peso y muestra en pantalla el primer nombre en orden alfabetico de todos los ingresados.");
 
 	while(strcmp(temporal_nombre, PALABRA_CLAVE) != 0){ // TIENEN QUE DAR DIFERENTE A 0, SINO ES EQUIVALENTE A PALABRA_CLAVE
-
+		printf("\nEscribir Nombre: ");
 		scanf("%s" ,temporal_nombre);
+		//LOGICA
+		//BASANDOME EN QUE SE PUEDE UTILIZAR LA FUNCION strcpy() que retorna 0, -1 y 1 Y QUE COMPARA POR "PESOS"... {POR EJ: Es decir, 'A' es menor que 'Z'}
+		if(strcmp(temporal_nombre, nombre_stdout) == -1){
 
-		if(strcmp(temporal_nombre, "FIN") == 0){ //strcmp() <--- si retorna 0, es porque son iguales
-
-			break;
-
-		}
-		else{
-
-			function(i);
+			//copio el string temporal dentro de la iteracion a nombre_stdout
+			strcpy(nombre_stdout ,temporal_nombre);
 
 		}
 
 	}
-	for(int i = 0; temporal_nombre != PALABRA_CLAVE; i++){
 
-		while(strcmp(temporal_nombre, "FIN") != 0) {//strcmp() <--- si retorna 0, es porque son iguales
-
-			//Contexto
-			printf("\nIngrese Nombre: ");
-			scanf("%s" ,temporal_nombre);
-
-			//ALFABETO MAYUSCULAS
-			for(short ABC0 = 65; ABC <= 90; ABC0++){
-
-				
-
-			}
-
-			//ALFABETO MINUSCULAS
-			for(short ABC1 = 97; ABC <= 122; ABC1++){
-
-
-
-			}
-
-		}
-
-	}
+	printf("\n\nEL primer nombre en orden alfabetico de todos los ingresados es: %s" ,nombre_stdout);
 
 	return 0;
 }

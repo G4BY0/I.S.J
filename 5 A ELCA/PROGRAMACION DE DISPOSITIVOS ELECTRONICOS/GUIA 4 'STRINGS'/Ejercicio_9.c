@@ -41,7 +41,7 @@ char *function(){
       return palabra;
 
     }
-
+    // En caso de querer ver que ñ y Ñ son -92 y -91 printf("%c %d\n" ,palabra[numero_de_letras] ,palabra[numero_de_letras]);
     //Si se presentan los caracteres 'X' , 'Y' , 'Z' , 'x' , 'y' , 'z' deberian loopear al principio
     switch(palabra[numero_de_letras]){
 
@@ -66,7 +66,7 @@ char *function(){
 
       /*  LOGICA AGREGADA POR AGREGAR CARACTER 'Ñ' y 'ñ'  */
       //CARACTER HISPANO HABLANTE 'ñ'
-      case 164: // <--- 'ñ ' caracter 164
+      case -92: // <--- 'ñ ' caracter 164 // PROBLEMA MI COMPUTADORA ES -92 por STDIN
       //caracter 'q' = 113 {TABLA ASCII}
       palabra[numero_de_letras] = 113; // <--- pasa a ser Caracter 'q' por sumarle 3 unidades a partir del alfabeto hispano hablante
       break;
@@ -77,7 +77,7 @@ char *function(){
       break;
 
       //CARACTER HISPANO HABLANTE 'Ñ'
-      case 165: // <--- 'Ñ ' caracter 165
+      case -91: // Ñ <--- "TABLA ASCII" ES EL 165 // PROBLEMA MI COMPUTADORA ES -91 leido por STDIN
       //caracter 'Q' = 81 {TABLA ASCII}
       palabra[numero_de_letras] = 81; // <--- pasa a ser Caracter 'Q' por sumarle 3 unidades a partir del alfabeto hispano hablante
       break;
@@ -93,7 +93,7 @@ char *function(){
       break;
 
     }
-
+    // En caso de querer ver que ñ y Ñ son -92 y -91 printf("%c %d\n" ,palabra[numero_de_letras] ,palabra[numero_de_letras]);
   }
 
   return palabra;
