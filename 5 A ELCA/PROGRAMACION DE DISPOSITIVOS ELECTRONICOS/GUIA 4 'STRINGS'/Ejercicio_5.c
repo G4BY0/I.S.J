@@ -14,13 +14,10 @@
 
 int main(void){
 
-	char temp;
-	int contador_minusculas;
-	int contador_mayusculas;
-
-    //inicializo contadores
-    contador_minusculas = 0;
-    contador_mayusculas = 0;
+	char temp;	//NECESARIA PARA LA LOGICA
+  //DECLARACION, DEFINICION Y INICIALIZACION DE CONTADORES
+  int contador_minusculas = 0;	//STDOUT
+  int contador_mayusculas = 0;	//STDOUT
 
 		puts("Ingresar palabra:");
     //logica para ignorar espacios, enter, tabulaciones, entre otros tipos de control
@@ -43,7 +40,7 @@ int main(void){
 	    //--------------------------------------------------------------------------
 
 	}
-	//-------------------------------------------------------------------------------
+	//--------------------------------------------------------------------------------
 
 
 

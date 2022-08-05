@@ -16,12 +16,10 @@ int main(void){
 	//OTRA MANERA DE HACERLO SERIA CON PUNTEROS PERO SE VUELVE MUY TEDIOSO, ENTONCES VOY A USAR VECTORES DE CARACTERES
 	char string_1[250];
 	char string_2[250];
-	short flag_comparacion; // <- 0 "PALABRAS DIFERENTES" || 1 "PALABRAS IGUALES"
+	short flag_comparacion = 1; // <- 0 "PALABRAS DIFERENTES" || 1 "PALABRAS IGUALES" INCIALIZA EN 1
 
-	int string_1_EOF;
-	int string_2_EOF;
-
-
+	int string_1_EOF; //NECESARIOS PARA COMPARAR
+	int string_2_EOF;	//NECESARIOS PARA COMPARAR
 
 	//PIDO A STDIN LOS DATOS A COMPARAR
 	printf("Escribir 1° palabra: " );
@@ -29,16 +27,17 @@ int main(void){
 
 	printf("Escribir 2° palabra: ");
 	scanf("%s" ,string_2);
+	//--------------------------------
 
-
+	//BUSCO Y ENCUENTRO LA LONGITUD DE AMBOS STRINGS
 	for(string_1_EOF = 0; string_1[string_1_EOF] != '\0'; string_1_EOF++);
 	for(string_2_EOF = 0; string_2[string_2_EOF] != '\0'; string_2_EOF++);
-	printf("%d" ,string_1_EOF);
-	printf("%d" ,string_2_EOF);
+	//----------------------------------------------
+
+	//LOGICA DE COMPARACION
 	if(string_1_EOF == string_2_EOF){
 
-		for(short checkeando = 0, flag_comparacion = 1; checkeando < string_1_EOF; checkeando++){
-
+		for(short checkeando = 0 ; checkeando < string_1_EOF; checkeando++){
 			if(string_1[checkeando] != string_2[checkeando]){
 
 				flag_comparacion = 0;
@@ -48,54 +47,10 @@ int main(void){
 		}
 
 	}
+	else(flag_comparacion = 0);
+	//---------------------
 
-
-
-
-
-	//for(int caracter = 0; string_1[caracter] != '\0' && string_2[caracter] != '\0'; caracter++){
-
-
-
-
-
-	/*
-	//LOGICA DE COMPARACION
-	for(short i = 0; i <= 250; i++){
-
-		//LOGICA DE SI TERMINO EL STREAM DE LA CADENA
-		if(string_1[i] == '\0' && string_2[i] == '\0'){
-
-			break;
-
-		}
-
-		if(string_1[i] == '\0' && string_2[i] != '\0'){
-
-
-			flag_comparacion = 0;
-			break;
-		}
-
-		if(string_1[i] != '\0' && string_2[i] == '\0'){
-
-
-			flag_comparacion = 0;
-			break;
-		}
-		//--------------------------------------------
-
-		if(string_1[i] == string_2[i]){
-
-			flag_comparacion = 1;
-
-		}
-
-
-	}
-	//--------------------
-	*/
-
+	//A TRAVES DEL FLAG_COMPARACION ME INDICA SI SON IGUALES O NO Y LO INDICO EN STDOUT
 	if(flag_comparacion == 1){
 
 	    puts("SON IGUALES");
@@ -106,9 +61,7 @@ int main(void){
 	   puts("NO SON IGUALES");
 
 	}
+	//---------------------------------------------------------------------------------
 
 	return 0;
-
-	//EL PROGRAMA SE COMPROBO A BASE DE ERRORES PERO LE ENCONTRE UN BUG QUE NO ENCUENTRO REPARACION HASTA EL MOMENTO, Y ES CUANDO COMPARO "321" con "123"...
-
 }
