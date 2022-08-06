@@ -25,7 +25,7 @@ int main(void){
 
   //INDICACION
   puts("INGRESAR PALABRA:");
-  printf("%d" ,1);
+  
   //logica para ignorar espacios, enter, tabulaciones, entre otros tipos de control
   while((temp = getchar()) != '\n' && temp != ' ' && temp != '\t' && temp != '\v' && temp != '\f' && temp != '\r'){
     printf("%d\n" ,temp);
