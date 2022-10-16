@@ -6,12 +6,6 @@
 
 #include "functions.h"
 
-#define MENSAJES_RETARDO 1000  // TIEMPO DEL DELAY, EDITAR "NUMERO" SI ES NECESARIO
-#define DEMORA 3 //DEMORA ENTRE PASOS DEL MOTOR
-#define BUZZER_FREQ_DUTYCYCLE_ON 255
-#define BUZZER_FREQ_DUTYCYCLE_OFF 0
-
-
 void setup() {
   
   Auto::Setup();
@@ -36,20 +30,12 @@ void loop() {
   
   Serial.println("Yendo Adelante"); //REGISTRO
   //BUCLE HASTA DETECTAR OBSTRUCCION ALGUNO DE LOS SENSORES
-  while((Auto::Infrarrojo::State() != true) && (Auto::Ultrasonido::State() != true)){
-  Auto::Motor::Adelante();       //MOTOR IR ADELANTE
+  while((Auto::Infrarrojo::State() == false) && (Auto::Ultrasonido::State() == false)){
+    Auto::Motor::Adelante();       //MOTOR IR ADELANTE
   }
- 
-  
   Auto::Interrupt();
-  
-  //LOGICA DEL BUZZER QUE SUENE
-  analogWrite(PIN::BUZZER, BUZZER_FREQ_DUTYCYCLE_ON);
-  
-  delay(MENSAJES_RETARDO * 3);
-  
-  analogWrite(PIN::BUZZER, BUZZER_FREQ_DUTYCYCLE_OFF);
-  //--------------------------
+  Auto::Buzzer::Protocol();
+  delay(MENSAJES_RETARDO * 2);
   
   //MENSAJES
   Serial.println("MARCHA ATRAS"); //REGISTRO
@@ -59,10 +45,11 @@ void loop() {
   Auto::MyServo.write(45);
   delay(MENSAJES_RETARDO);
   Auto::Leds(HIGH,LOW,LOW);
-
+  
   for(unsigned long milisegundos = millis();((millis() - milisegundos) <= 7000 ); ){
     Auto::Motor::Atras();
-  }
+  } 
+  
 
   //LOGICA PARA ENCENDER LA LUZ DE CONTROL PARA REACOMODAR LAS RUEDAS
   Auto::Leds(LOW,HIGH,LOW);

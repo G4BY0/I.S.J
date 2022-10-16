@@ -10,6 +10,9 @@
 #include <stdint.h>         //Libreria de tipo de integrers
 
 
+#define MENSAJES_RETARDO 1000  // TIEMPO DEL DELAY, EDITAR "NUMERO" SI ES NECESARIO
+
+
 // NO SE PUSIERON LOS PROTOTIPOS DE LAS FUNCIONES, PERO FUNCIONO IGUAL ASI QUE LO DEJO ASI...
 
 
@@ -112,81 +115,81 @@ namespace Auto{
 
   class Message{
     public:
-      //MENSAJE DE ENCENDIDO()
-      static void Setup(void){
+    //MENSAJE DE ENCENDIDO()
+    static void Setup(void){
   
-        lcd.clear();
-        lcd.setCursor(0,0);
-        lcd.print("Gabriel Guereta");
-        lcd.setCursor(0,1);
-        lcd.print("Arrancando...");
-        lcd.blink();
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("Gabriel Guereta");
+      lcd.setCursor(0,1);
+      lcd.print("Arrancando...");
+      lcd.blink();
     
   
-      }
+    }
 
-      //MENSAJE DE INTERRUPCION()
-      static void Interrupcion(void){
+    //MENSAJE DE INTERRUPCION()
+    static void Interrupcion(void){
   
-        lcd.clear();
-        lcd.setCursor(0,0);
-        lcd.print("¡INTERRUPCION!");
-        lcd.setCursor(0,1);
-        lcd.print("PASO INACCESIBLE...");
-        lcd.blink();
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("¡INTERRUPCION!");
+      lcd.setCursor(0,1);
+      lcd.print("PASO INACCESIBLE...");
+      lcd.blink();
 
-      }
+    }
 
-      //MENSAJE DE YENDO PARA DELANTE()
-      static void Adelante(void){
+    //MENSAJE DE YENDO PARA DELANTE()
+    static void Adelante(void){
   
-        lcd.clear();
-        lcd.setCursor(0,0);
-        lcd.print("YENDO ADELANTE");
-        lcd.setCursor(0,1);
-        lcd.print("GOING FRONT");
-        lcd.blink();
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("YENDO ADELANTE");
+      lcd.setCursor(0,1);
+      lcd.print("GOING FRONT");
+      lcd.blink();
     
   
-      }
+    }
 
-      //MENSAJE DE MARCHA-ATRAS()
-      static void Atras(void){
+    //MENSAJE DE MARCHA-ATRAS()
+    static void Atras(void){
   
-        lcd.clear();
-        lcd.setCursor(0,0);
-        lcd.print("YENDO MARCHA ATRAS");
-        lcd.setCursor(0,1);
-        lcd.print("GOING BACK");
-        lcd.blink();
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("YENDO MARCHA ATRAS");
+      lcd.setCursor(0,1);
+      lcd.print("GOING BACK");
+      lcd.blink();
   
-      }
+    }
 
-      //MENSAJE DE PEGANDO-VUELTA()
-      static void Vuelta(void){
+    //MENSAJE DE PEGANDO-VUELTA()
+    static void Vuelta(void){
   
-        lcd.clear();
-        lcd.setCursor(0,0);
-        lcd.print("ACCEDIENDO A PROTOCOLO:");
-        lcd.setCursor(0,1);
-        lcd.print("EQUILIBRIO");
-        lcd.blink();
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("ACCEDIENDO A PROTOCOLO:");
+      lcd.setCursor(0,1);
+      lcd.print("EQUILIBRIO");
+      lcd.blink();
     
-      }
+    }
 
-      //MENSAJE DE ERROR()
-      static void Error(void){
+    //MENSAJE DE ERROR()
+    static void Error(void){
   
-        lcd.clear();
-        lcd.setCursor(0,0);
-        lcd.print("ERROR");
-        lcd.setCursor(0,1);
-        lcd.print("REVISAR PROBLEMA...");
-        lcd.blink();
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("ERROR");
+      lcd.setCursor(0,1);
+      lcd.print("REVISAR PROBLEMA...");
+      lcd.blink();
     
-      }
+    }
 
-    };
+  };
 
 
   //ARRANQUE
@@ -248,40 +251,41 @@ namespace Auto{
   class Motor{
     public:
     /* MODO : "PASO_COMPLETO_CON_UNA_BOBINA" (MINIMO TORQUE) */
-
+    #define MOTOR_DEMORA 3
     //MOTOR_MARCHA_ADELANTE()
     static void Adelante(void){
-      #define MOTOR_DEMORA 3
+      
 
       //------------PASO 1-------------
-      digitalWrite(PIN::MOTOR::MOTOR_BOBINA1, HIGH);
-      digitalWrite(PIN::MOTOR::MOTOR_BOBINA2, LOW);
-      digitalWrite(PIN::MOTOR::MOTOR_BOBINA3, LOW);
       digitalWrite(PIN::MOTOR::MOTOR_BOBINA4, LOW);
+      digitalWrite(PIN::MOTOR::MOTOR_BOBINA3, LOW);
+      digitalWrite(PIN::MOTOR::MOTOR_BOBINA2, LOW);
+      digitalWrite(PIN::MOTOR::MOTOR_BOBINA1, HIGH);
       delay(MOTOR_DEMORA);
+
       //-------------------------------
 
       //------------PASO 2-------------
-      digitalWrite(PIN::MOTOR::MOTOR_BOBINA1, LOW);
-      digitalWrite(PIN::MOTOR::MOTOR_BOBINA2, HIGH);
-      digitalWrite(PIN::MOTOR::MOTOR_BOBINA3, LOW);
       digitalWrite(PIN::MOTOR::MOTOR_BOBINA4, LOW);
+      digitalWrite(PIN::MOTOR::MOTOR_BOBINA3, LOW);
+      digitalWrite(PIN::MOTOR::MOTOR_BOBINA2, HIGH);
+      digitalWrite(PIN::MOTOR::MOTOR_BOBINA1, LOW);
       delay(MOTOR_DEMORA);
       //-------------------------------
 
       //------------PASO 3-------------
-      digitalWrite(PIN::MOTOR::MOTOR_BOBINA1, LOW);
-      digitalWrite(PIN::MOTOR::MOTOR_BOBINA2, LOW);
-      digitalWrite(PIN::MOTOR::MOTOR_BOBINA3, HIGH);
       digitalWrite(PIN::MOTOR::MOTOR_BOBINA4, LOW);
+      digitalWrite(PIN::MOTOR::MOTOR_BOBINA3, HIGH);
+      digitalWrite(PIN::MOTOR::MOTOR_BOBINA2, LOW);
+      digitalWrite(PIN::MOTOR::MOTOR_BOBINA1, LOW);
       delay(MOTOR_DEMORA);
       //-------------------------------
 
       //------------PASO 4-------------
-      digitalWrite(PIN::MOTOR::MOTOR_BOBINA1, LOW);
-      digitalWrite(PIN::MOTOR::MOTOR_BOBINA2, LOW);
-      digitalWrite(PIN::MOTOR::MOTOR_BOBINA3, LOW);
       digitalWrite(PIN::MOTOR::MOTOR_BOBINA4, HIGH);
+      digitalWrite(PIN::MOTOR::MOTOR_BOBINA3, LOW);
+      digitalWrite(PIN::MOTOR::MOTOR_BOBINA2, LOW);
+      digitalWrite(PIN::MOTOR::MOTOR_BOBINA1 , LOW);
       delay(MOTOR_DEMORA);
       //-------------------------------
 
@@ -349,17 +353,38 @@ namespace Auto{
 
         tiempo_demora = pulseIn(PIN::ULTRASONIDO::ECHO, HIGH); //obtenemos el ancho del pulso
         distancia = tiempo_demora/59;             //escalamos el tiempo a una distancia en cm
-        Serial.print("distancia: ");
-        Serial.println(distancia);
-  
+ 
         if(distancia <= 10){
           return true;  
         }
         else{
           return false;
         }
+        
  
       }
+
+  };
+
+  class Buzzer{
+    private:
+      #define BUZZER_FREQ_DUTYCYCLE_ON 255
+      #define BUZZER_FREQ_DUTYCYCLE_OFF 0
+
+    public:
+    //SONAR BUZZER() PARA INTERRUPCION
+    static uint_fast8_t Protocol(void){
+
+      analogWrite(PIN::BUZZER, BUZZER_FREQ_DUTYCYCLE_ON);
+      delay(MENSAJES_RETARDO / 4);
+      analogWrite(PIN::BUZZER, BUZZER_FREQ_DUTYCYCLE_OFF);
+      delay(MENSAJES_RETARDO / 2);
+      analogWrite(PIN::BUZZER, BUZZER_FREQ_DUTYCYCLE_ON);
+      delay(MENSAJES_RETARDO / 4);
+      analogWrite(PIN::BUZZER, BUZZER_FREQ_DUTYCYCLE_OFF);
+      
+      
+    }
 
   };
 
