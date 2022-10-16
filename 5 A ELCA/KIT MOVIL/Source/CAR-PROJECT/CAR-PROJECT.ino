@@ -8,7 +8,8 @@
 
 #define MENSAJES_RETARDO 1000  // TIEMPO DEL DELAY, EDITAR "NUMERO" SI ES NECESARIO
 #define DEMORA 3 //DEMORA ENTRE PASOS DEL MOTOR
-
+#define BUZZER_FREQ_DUTYCYCLE_ON 255
+#define BUZZER_FREQ_DUTYCYCLE_OFF 0
 
 
 void setup() {
@@ -41,8 +42,15 @@ void loop() {
  
   
   Auto::Interrupt();
+  
+  //LOGICA DEL BUZZER QUE SUENE
+  analogWrite(PIN::BUZZER, BUZZER_FREQ_DUTYCYCLE_ON);
+  
   delay(MENSAJES_RETARDO * 3);
-
+  
+  analogWrite(PIN::BUZZER, BUZZER_FREQ_DUTYCYCLE_OFF);
+  //--------------------------
+  
   //MENSAJES
   Serial.println("MARCHA ATRAS"); //REGISTRO
   Auto::Message::Atras(); // A LA SALIDA
@@ -53,7 +61,7 @@ void loop() {
   Auto::Leds(HIGH,LOW,LOW);
 
   for(unsigned long milisegundos = millis();((millis() - milisegundos) <= 7000 ); ){
-  Auto::Motor::Atras();
+    Auto::Motor::Atras();
   }
 
   //LOGICA PARA ENCENDER LA LUZ DE CONTROL PARA REACOMODAR LAS RUEDAS
